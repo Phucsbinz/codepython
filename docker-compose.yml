@@ -1,0 +1,10 @@
+services:
+  app:
+    container_name: python-app
+    build: .
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    # Chế độ "Live Dev": Giữ container luôn chạy để bạn có thể docker exec
+    command: tail -f /dev/null
